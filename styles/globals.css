@@ -1,6 +1,5 @@
 html,
 body {
-  padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -13,14 +12,45 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: "Alliance No.1",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+h2{
+  margin:  0;
+  margin-bottom: 12px;
+  padding: 0;
+  color: #24292f;
+
+  line-height: 24px;
+  font-size: 20px;
+}
+p{
+  font-size: 14px;
+  line-height: 24px;
+  margin:  0;
+  padding: 0;
+  padding-bottom: 10px;
+  color: #57606a;
+}
+
+
+@media(min-width: 700px){
+  h2{
+    margin:  0;
+    margin-bottom: 12px;
+    padding: 0;
+    color: #24292f;
+    letter-spacing: -.01em;
+    line-height: 24px;
+    font-size: 20px;
   }
-  body {
-    color: white;
-    background: black;
+  p{
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    margin:  0;
+    padding: 0;
+    padding-bottom: 10px;
+    color: #57606a;
   }
 }

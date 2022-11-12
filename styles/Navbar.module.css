@@ -1,0 +1,44 @@
+.header{
+	padding: 0 24px;
+	position: relative;
+	height: 66px;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid hsla(210,18%,87%,1);
+}
+.a{
+	font-weight: 800;
+	white-space: nowrap;
+	font-size: 22px;
+	margin-left: 8px;
+	color:  #24292f;
+}
+.logo{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.span{
+	font-size: 24px !important;
+    line-height: 32px !important;
+    font-weight: 500;
+    margin-left: 8px !important;
+    color: #24292f;
+    opacity: 0.3;
+}
+.navbar{
+	position: fixed;
+
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100vw;
+	height: 100%;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+
+}

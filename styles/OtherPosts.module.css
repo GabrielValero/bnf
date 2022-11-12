@@ -1,0 +1,14 @@
+.container{
+	border-bottom: 1px solid hsla(210,18%,87%,1);
+	padding-bottom: 24px;
+	padding-top: 24px;
+}
+
+.content{
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+}
+.imageContainer{
+	margin-bottom: 24px;
+}
