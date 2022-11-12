@@ -13,9 +13,6 @@ export default function Navbar(){
 					<span className={styles.span}>/</span>					
 					<a href="#" className={styles.a}>Blog</a>
 				</div>
-
-
-
 			</nav>
 		</header>
 	)
