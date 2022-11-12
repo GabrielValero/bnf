@@ -30,7 +30,7 @@ export default function Home({main, enterprise, education, policy, company}){
 }
 
 export async function getServerSideProps(){
-  const posts = await fetch('http://localhost:3000/api/posts')
+  const posts = await fetch('https://bnf-mu.vercel.app/api/posts')
   .then( result => result.json())
   .then(res=>{
     return res.posts;
