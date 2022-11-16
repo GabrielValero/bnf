@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link'
 import styles from '../../../styles/Navbar.module.css'
 
 export default function Navbar(){
@@ -12,6 +12,9 @@ export default function Navbar(){
 					</svg>
 					<span className={styles.span}>/</span>					
 					<a href="#" className={styles.a}>Blog</a>
+					<Link href="/admin" className={styles.a} style={{marginLeft: 40}}>
+						Admin
+					</Link>
 				</div>
 			</nav>
 		</header>

@@ -38,7 +38,7 @@ export async function getServerSideProps(){
 
   await dbConnect()
 
-  const posts = await fetch('http://localhost:3000/api/posts')
+  const posts = await fetch('/api/posts')
     .then(res=>res.json())
     .then(response=>{
       
