@@ -16,7 +16,6 @@ export default function EditPost(){
 	const getPost = async ()=>{
 		const response = await getPostById(router.asPath.slice(router.asPath.indexOf('=')+1))
 		setPost(response)
-		console.log(response)
 	}
 
 	useEffect(()=>{

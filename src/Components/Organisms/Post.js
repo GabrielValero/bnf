@@ -26,9 +26,9 @@ export default function Post({title, imageLink, content, time, imageAuthor, auth
 	return(
 		<div className={main ? styles.containerMain : styles.container}>
 			{imageLink && <Image link={imageLink} main={main}/>}
-			<div className={main && styles.text}>
-				<h2 className={main && styles.title}>{title}</h2>
-				<p className={main && styles.content}>{content}</p>
+			<div className={main ? styles.text  : undefined}>
+				<h2 className={main ? styles.title : undefined}>{title}</h2>
+				<p className={main ? styles.content : undefined}>{content}</p>
 				<div className={styles.row}>
 					<div className={main ? styles.extraInfoMain : styles.extraInfo}>
 						<Author imageLink={imageAuthor} name={author} time={time} main={main}/>

@@ -3,7 +3,7 @@ import styles from '../../../styles/OtherPosts.module.css'
 import Image from '../Atom/Image'
 import Author from '../Molecules/Author'
 
-export default function otherPosts({title, content, imageAuthor, imageLink, author, main }){
+export default function OtherPosts({title, content, imageAuthor, imageLink, author, main }){
 	return(
 		<div className={styles.container}>
 			{main && 
