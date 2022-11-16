@@ -21,7 +21,7 @@ export async function getServerSideProps(){
 
   await dbConnect()
 
-  const posts = await fetch('/api/posts')
+  const posts = await fetch('https://bnf-mu.vercel.app/api/posts')
     .then(res=>res.json())
     .then(response=>{
       
