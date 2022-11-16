@@ -1,15 +1,20 @@
+import {useEffect} from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
+
+import dbConnect from '../src/backend/db.js'
+
+import usePost from '../src/hooks/usePost'
 
 import styles from '../styles/Home.module.css'
 
 import PostList from '../src/Components/Organisms/PostList'
 import SectionList from '../src/Components/Organisms/SectionList'
-
 import Post from '../src/Components/Organisms/Post'
 import Navbar from '../src/Components/Organisms/Navbar'
 
+
 export default function Home({main, enterprise, education, policy, company}){
+
   return (
     <>
     <Navbar/>
@@ -30,19 +35,32 @@ export default function Home({main, enterprise, education, policy, company}){
 }
 
 export async function getServerSideProps(){
-  const posts = await fetch('https://bnf-mu.vercel.app/api/posts')
-  .then( result => result.json())
-  .then(res=>{
-    return res.posts;
-  })
+
+  await dbConnect()
+
+  const posts = await fetch('http://localhost:3000/api/posts')
+    .then(res=>res.json())
+    .then(response=>{
+      
+      return response.data;
+    })
+    .catch(error=>{
+      console.log(error.message)
+    })
+    console.log(posts)
+    let main = posts.filter(post=> post.type == "Main").slice(0,4)
+    let enterprise = posts.filter(post=> post.type == "Enterprise").slice(0,3)
+    let education = posts.filter(post=> post.type == "Education").slice(0,3)
+    let policy = posts.filter(post=> post.type == "Policy").slice(0,3)
+    let company = posts.filter(post=> post.type == "Company").slice(0,3)
 
   return{
     props:{
-      main: posts.main,
-      enterprise: posts.enterprise,
-      education: posts.education,
-      policy: posts.policy,
-      company: posts.company
+      main,
+      enterprise,
+      education,
+      policy,
+      company
     }
   }
 }

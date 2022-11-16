@@ -1,10 +1,10 @@
 import '../styles/globals.css'
-import {AppContextProvider} from '../src/Context/Ctx'
+import {PostsContextProvider} from '../src/Context/PostsContext'
 function MyApp({ Component, pageProps }) {
   return (
-    <AppContextProvider>
+    <PostsContextProvider>
       <Component {...pageProps} />
-    </AppContextProvider>
+    </PostsContextProvider>
     
   )
 }
