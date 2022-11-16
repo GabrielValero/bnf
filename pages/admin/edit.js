@@ -6,7 +6,7 @@ import usePost from '../../src/hooks/usePost'
 
 import Form from '../../src/Components/Organisms/Form'
 
-export default function createPost(){
+export default function EditPost(){
 
 	const [post, setPost] = useState()
 
