@@ -59,10 +59,3 @@ export default function Home(){
     </>
   )
 }
-
-export async function getServerSideProps(){
-  await dbConnect()
-  return{
-    props:{}
-  }
-}

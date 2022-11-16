@@ -1,12 +1,14 @@
 import React, {useState, useCallback, useEffect, useContext} from 'react'
 import PostsContext from '../Context/PostsContext'
 
+const link = "https://bnf-mu.vercel.app"
+
 export default function usePost(){
 	const {initial} = useContext(PostsContext);
 
 	const getAllPosts = useCallback(async()=>{
 
-		const posts = await fetch('/api/posts')
+		const posts = await fetch(link+'/api/posts')
 		.then(res=>res.json())
 		.then(response=>{
 			const data = response.data;
@@ -17,7 +19,7 @@ export default function usePost(){
 		})
 	},[])
 	const getPostById = useCallback(async(id)=>{
-		const posts = await fetch(`/api/${id}`)
+		const posts = await fetch(`${link}/api/${id}`)
 			.then(res=>res.json())
 			.then(response=>{
 				return response.data
@@ -30,7 +32,7 @@ export default function usePost(){
 
 	const createPost = useCallback(async (post)=>{
 
-		fetch('/api/posts', {
+		fetch(link+'/api/posts', {
 			method: "POST",
 			headers: {
 	          'Content-Type': 'application/json',
@@ -49,7 +51,7 @@ export default function usePost(){
 
 	const updatePost = useCallback(async (post, id)=>{
 
-		fetch(`/api/${id}`, {
+		fetch(`${link}/api/${id}`, {
 			method: "PUT",
 			headers: {
 	          'Content-Type': 'application/json',
@@ -66,7 +68,7 @@ export default function usePost(){
 	},[])
 
 	const deletePost = useCallback(async(id)=>{
-		fetch(`/api/${id}`,{
+		fetch(`${link}/api/${id}`,{
 			method: "DELETE"
 		})
 		.then(response=>response.json())

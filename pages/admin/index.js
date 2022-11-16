@@ -11,7 +11,7 @@ export default function Home({receivedPosts}){
 
 	return(
 		<div style={{display:"flex", justifyContent:"center", marginTop: 60, marginBottom: 60}}>
-      <PostList list={posts.length > 0 ? posts : receivedPosts} admin/>
+      {receivedPosts && <PostList list={posts.length ? posts : receivedPosts} admin/>}
 		</div>
 	)
 }
@@ -24,7 +24,7 @@ export async function getServerSideProps(){
   const posts = await fetch('https://bnf-mu.vercel.app/api/posts')
     .then(res=>res.json())
     .then(response=>{
-      
+      console.log(response)
       return response.data;
     })
     .catch(error=>{
